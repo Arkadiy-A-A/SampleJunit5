@@ -14,6 +14,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.RepeatedTest.LONG_DISPLAY_NAME;
 import static org.junit.jupiter.api.condition.JRE.*;
 import static org.junit.jupiter.api.condition.OS.*;
 
@@ -35,7 +37,7 @@ public class SimpleTests extends BaseTests {
      * Трехкратное повторение теста
      */
     @Test
-    @RepeatedTest(name = "Имя теста", value = 3)
+    @RepeatedTest(name = "Имя теста" + LONG_DISPLAY_NAME, value = 3)
     void testRepeated() {
     }
 
@@ -84,8 +86,8 @@ public class SimpleTests extends BaseTests {
     @Test
     @DisplayName("assertNull Examples")
     void test_assertNull() {
-        Assertions.assertNull(null);
-        Assertions.assertNull(new Object(), "assertNull Fail Message");
+        assertNull(null);
+        assertNull(new Object(), "assertNull Fail Message");
     }
 
     @Test
@@ -279,7 +281,7 @@ public class SimpleTests extends BaseTests {
      * @DisabledIfSystemProperty
      */
     @Test
-    @Tag("java8")
+    @Tag("smoke")
     @EnabledOnJre(JAVA_8)
     void onlyOnJava8() {
         // ...
@@ -373,7 +375,7 @@ public class SimpleTests extends BaseTests {
         //    assumeNoException([String message], Throwable t) — Предположение, что тест завершится нормально. Если метод вызывается и в качестве t передается выброшенное исключение, то тест игнорируется (обычно применяется в блоке catch конструкции try-catch и передается выброшенное исключение).
         //    assumeNotNull(Object... objects) — Если вызывается с одним (или более) не нулевым объектом, то тест прерывается и игнорируется.
         //    assumeThat([String message], T actual, Matcher<T> matcher)  — Проверка, что actual удовлетворяет условию заданному matcher.
-        Assumptions.assumeTrue(true, "[String message]");
+        Assumptions.assumeTrue(false, "[String message]");
         System.out.println("testAssume");
     }
 
