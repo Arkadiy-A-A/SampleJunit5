@@ -3,6 +3,7 @@ package test;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
 import test.base.BaseTests;
+import test.myanatation.Smoke;
 import test.myanatation.TestOnMac;
 
 import java.io.File;
@@ -229,7 +230,7 @@ public class SimpleTests extends BaseTests {
         );
     }
 
-    @Test
+    @Smoke
     void testAssertTrue() {
         Assertions.assertTrue("FirstName".startsWith("F"));
     }
