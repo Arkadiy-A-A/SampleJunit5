@@ -3,6 +3,7 @@ package test;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
 import test.base.BaseTests;
+import test.myanatation.Regression;
 import test.myanatation.Smoke;
 import test.myanatation.TestOnMac;
 
@@ -38,7 +39,7 @@ public class SimpleTests extends BaseTests {
      * Трехкратное повторение теста
      */
     @Test
-    @RepeatedTest(name = "Имя теста" + LONG_DISPLAY_NAME, value = 3)
+    @RepeatedTest(name = LONG_DISPLAY_NAME, value = 3)
     void testRepeated() {
     }
 
@@ -184,9 +185,7 @@ public class SimpleTests extends BaseTests {
     @Test
     @DisplayName("assertThrows Examples")
     void test_assertThrows() {
-        Assertions.assertThrows(Exception.class, () -> {
-            throw new RuntimeException();
-        });
+        Assertions.assertThrows(Exception.class, () -> {throw new RuntimeException();});
 
         Assertions.assertThrows(IOException.class, () -> {throw new RuntimeException();});
 
@@ -356,7 +355,7 @@ public class SimpleTests extends BaseTests {
     }
 
     @Test
-    @EnabledIfSystemProperty(named = "os.arch", matches = ".*32.*")
+    @EnabledIfSystemProperty(named = "os.arch", matches = "*32.*")
     void onlyOn64BitArchitectures() {
         // ...
     }
