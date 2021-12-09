@@ -4,21 +4,29 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
+import test.extensionorother.callback.*;
 
-public class BaseTests {
+@ExtendWith({
+        MyBeforeAllCallback.class,
+        MyBeforeEachCallback.class,
+        MyBeforeTestExecutionCallback.class,
+        MyAfterTestExecutionCallback.class,
+        MyAfterEachCallback.class,
+        MyAfterAllCallback.class
+})
+public class BaseCallBackTests {
 
     @BeforeAll
     static void beforeClass() {
         System.out.println();
         System.out.println();
         System.out.println("@BeforeAll");
+        System.out.println();
     }
-
-
 
     @BeforeEach
     void before() {
-        System.out.println();
         System.out.println("@BeforeEach");
     }
 

@@ -1,4 +1,4 @@
-package test.data;
+package test.simple.param.data;
 
 public class Book {
     private String title;

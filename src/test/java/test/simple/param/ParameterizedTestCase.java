@@ -1,24 +1,25 @@
-package test;
-
+package test.simple.param;
 
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
-
 import test.base.BaseTests;
-import test.data.Book;
+import test.simple.param.data.Book;
+
+
 import java.lang.annotation.ElementType;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 /**
  * Параметризация различными способами
  */
-public class ParameterizedCalcTest extends BaseTests {
+public class ParameterizedTestCase extends BaseTests {
 
     @ParameterizedTest
     @ValueSource(ints = { 1, 2, 3 })
@@ -48,7 +49,7 @@ public class ParameterizedCalcTest extends BaseTests {
     }
 
     @ParameterizedTest
-    @MethodSource("test.data.DataClass#msMP")
+    @MethodSource("test.simple.param.data.DataClass#msMP")
     void test_MethodSource_MultipleParams(int i, String s) {
         assertTrue(4 > i);
         assertTrue(Arrays.asList("A", "B", "C").contains(s));
@@ -77,9 +78,11 @@ public class ParameterizedCalcTest extends BaseTests {
     }
 
 
-
     static Book[] mpBooks() {
-        return new Book[] {new Book("Harry Potter"), new Book("Five Point Someone")};
+        return new Book[] {
+                new Book("Harry Potter"),
+                new Book("Five Point Someone")
+        };
     }
     @ParameterizedTest
     @MethodSource("mpBooks")

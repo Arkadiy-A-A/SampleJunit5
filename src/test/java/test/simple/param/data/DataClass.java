@@ -1,4 +1,4 @@
-package test.data;
+package test.simple.param.data;
 
 import org.junit.jupiter.params.provider.Arguments;
 
