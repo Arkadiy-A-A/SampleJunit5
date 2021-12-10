@@ -11,7 +11,7 @@ import test.extensionorother.parametrresolver.UserParameterResolver;
 public class ParameterResolvedTestCase {
 
     @Test
-    @Tag("OPER")
+    @Tag("ADMIN")
     @DisplayName("testParamResolved()")
     void testParamResolved(User user) {
         System.out.println("USER\n" + user);

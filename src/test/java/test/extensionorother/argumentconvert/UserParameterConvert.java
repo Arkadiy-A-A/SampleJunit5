@@ -17,7 +17,7 @@ public class UserParameterConvert implements ArgumentConverter {
      * @throws ArgumentConversionException
      */
     @Override
-    public Object convert(Object o,
+    public User convert(Object o,
                           ParameterContext parameterContext) throws ArgumentConversionException {
         Assertions.assertEquals(o.getClass(), TypeUser.class);
         Assertions.assertEquals(parameterContext.getParameter().getType(), User.class);

@@ -2,20 +2,9 @@ package test.simple;
 
 import org.junit.jupiter.api.*;
 import test.base.BaseTests;
-import test.simple.myanatation.Smoke;
 import test.simple.myanatation.TestOnMac;
 
 
-import java.io.File;
-import java.io.IOException;
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
-
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.RepeatedTest.LONG_DISPLAY_NAME;
 
 /**

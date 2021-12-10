@@ -25,13 +25,6 @@
 
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner -->
         <dependency>
             <groupId>org.junit.platform</groupId>
@@ -45,6 +38,12 @@
             <artifactId>junit-jupiter</artifactId>
             <version>5.8.2</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.junit.vintage</groupId>-->
+<!--            <artifactId>junit-vintage-engine</artifactId>-->
+<!--            <version>5.8.2</version>-->
+<!--        </dependency>-->
 
 
 
@@ -72,7 +71,7 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <failIfNoTests>false</failIfNoTests>
-                    <groups>Smoke</groups>
+<!--                    <groups>Smoke</groups>-->
 <!--                    <includes>-->
 <!--                        <include>**/*SuiteExampleTest.java</include>-->
 <!--                    </includes>-->

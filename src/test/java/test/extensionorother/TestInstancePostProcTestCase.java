@@ -18,7 +18,6 @@ public class TestInstancePostProcTestCase {
     }
 
     @Test
-    @Disabled
     void testMock(){
         Assertions.assertEquals("Welcome to Mock", myService.getString());
     }

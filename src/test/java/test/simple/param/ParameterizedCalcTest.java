@@ -21,7 +21,13 @@ public class ParameterizedCalcTest extends BaseTests {
 
 
     @ParameterizedTest(name = "Тестик data = {0}, {1}")
-    @CsvSource({"1,1,1", "1,2,2", "2,2,4", "3,2,6", "0,0,0"})
+    @CsvSource({
+            "1,1,1",
+            "1,2,2",
+            "2,2,4",
+            "3,2,6",
+            "0,0,0"
+    })
     void test_CsvSource(int a, int b, int c) {
         System.out.println("Праметры:\na = " + a + "\nb = " + b + "\nc = " + c+"\n");
         assertEquals(c, new Calculator().multiplication(a, b));

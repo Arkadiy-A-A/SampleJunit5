@@ -109,6 +109,7 @@ public class ConditionTestCase {
      *        св-во my.sys.prop=true
      */
     @Test
+    @Tag("ASD")
     @DisabledIfSystemProperty(named = "my.sys.prop", matches = "true")
     void testDisabledIfSystemProperty() {
         System.out.println("testDisabledIfSystemProperty()");

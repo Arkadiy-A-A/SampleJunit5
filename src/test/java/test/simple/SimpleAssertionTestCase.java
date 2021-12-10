@@ -130,11 +130,12 @@ public class SimpleAssertionTestCase extends BaseTests {
     @Test
     @DisplayName("assertThrows Examples")
     void test_assertThrows() {
-        Assertions.assertThrows(Exception.class, () -> {throw new RuntimeException();});
-        Assertions.assertThrows(IOException.class, () -> {throw new RuntimeException();});
-        Assertions.assertThrows(IOException.class, () -> {throw new RuntimeException();}, "assertThrows Failure Message");
+        ArrayList list = new ArrayList();
+//        Assertions.assertThrows(Exception.class, () -> {throw new RuntimeException();});
+//        Assertions.assertThrows(IOException.class, () -> {throw new RuntimeException();});
+//        Assertions.assertThrows(IOException.class, () -> {throw new RuntimeException();}, "assertThrows Failure Message");
         Throwable exception = Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            throw new IllegalArgumentException("Illegal Argument Exception occured");
+            list.get(0);
         });
         Assertions.assertEquals("Illegal Argument Exception occured", exception.getMessage());
     }
